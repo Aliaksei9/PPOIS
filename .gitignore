@@ -5,3 +5,5 @@ packages
 *.sin
 *.vs
 lab1/.vs
+*.sln
+*.vcxproj*
