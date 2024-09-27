@@ -2,3 +2,5 @@ x64
 *.vcxprog*
 *.config
 packages
+*.sin
+*.vs
