@@ -1,14 +1,14 @@
 #pragma once
-class barley_break
+class Barley_break
 {
 private:
-	int m_field[4][4], m_line_0, m_column_0;
+	int field[4][4], empty_line, empty_column;
 	void square_filling(int line, int column, int value);
 public:
-	barley_break();
+	Barley_break();
 	void mix();
 	void transposition(char place);
 	bool check();
 	void display();
-	int* operator [] (int index) { return m_field[index]; }
+	int* operator [] (int index) { return field[index]; }
 };

@@ -3,49 +3,32 @@
 #include <iostream>
 #include <algorithm>
 #include <cstdlib> 
-void barley_break::square_filling(int line, int column, int value)
+void Barley_break::square_filling(int line, int column, int value)//переиминовать переменные empty_line empty_column с большой буквы класс написать вырезать m,zn
 {
-	try
-	{
-		if (line < -1 || column < -1 || column > 3 || line > 3)
-			throw std::runtime_error("Строка и/или столбец приняли неожиданное значение");
 		for (int i = line; i > -1; --i)
-			for (int j = 4; j > -1; --j)
-				if (m_field[i][j] == 0)
+			for (int j = 3; j > -1; --j)
+				if (field[i][j] == 0)
 				{
-					m_field[i][j] = value;
+					field[i][j] = value;
 					return;
 				}
 		for (int i = line; i < 4; ++i)
 			for (int j = 0; j < 4; ++j)
-				if (m_field[i][j] == 0)
+				if (field[i][j] == 0)
 				{
-					m_field[i][j] = value;
+					field[i][j] = value;
 					return;
 				}
-	}
-	catch (std::exception& exception)
-	{
-		std::cerr << "Стандартное исключение: " << exception.what() << '\n';
-		system("PAUSE");
-		exit(-1);
-	}
-	catch (...)
-	{
-		std::cerr << "Ненормальное поведение\n";
-		system("PAUSE");
-		exit(-1);
-	}
 }
-barley_break::barley_break()
+Barley_break::Barley_break()
 {
 	mix();
 }
-void barley_break::mix()
+void Barley_break::mix()
 {
 	for (int i = 0; i < 4; ++i)
 		for (int j = 0; j < 4; ++j)
-			m_field[i][j] = 0;
+			field[i][j] = 0;
 	int line, column;
 	for (int value = 1; value < 16; ++value)
 	{
@@ -55,49 +38,48 @@ void barley_break::mix()
 	}
 	for (int i = 0; i < 4; ++i)
 		for (int j = 0; j < 4; ++j)
-			if (m_field[i][j] == 0)
+			if (field[i][j] == 0)
 			{
-				m_line_0 = i;
-				m_column_0 = j;
+				empty_line = i;
+				empty_column = j;
 			}
-	std::swap(m_field[m_line_0][m_column_0], m_field[3][3]);
-	m_column_0 = 3;
-	m_line_0 = 3;
+	std::swap(field[empty_line][empty_column], field[3][3]);
+	empty_column = 3;
+	empty_line = 3;
 }
-void barley_break::transposition(char place)
+void Barley_break::transposition(char place)//пробрасыать throw дальше
 {
-	try {
 		switch (place)
 		{
 		case 'u':
-			if (m_line_0 - 1 != -1)
+			if (empty_line - 1 != -1)
 			{
-				std::swap(m_field[m_line_0][m_column_0], m_field[m_line_0 - 1][m_column_0]);
-				--m_line_0;
+				std::swap(field[empty_line][empty_column], field[empty_line - 1][empty_column]);
+				--empty_line;
 			}
 			else throw std::runtime_error("Выход за границы поля\n");
 			break;
 		case 'd':
-			if (m_line_0 + 1 != 4)
+			if (empty_line + 1 != 4)
 			{
-				std::swap(m_field[m_line_0][m_column_0], m_field[m_line_0 + 1][m_column_0]);
-				++m_line_0;
+				std::swap(field[empty_line][empty_column], field[empty_line + 1][empty_column]);
+				++empty_line;
 			}
 			else throw std::runtime_error("Выход за границы поля\n");
 			break;
 		case 'l':
-			if (m_column_0 - 1 != -1)
+			if (empty_column - 1 != -1)
 			{
-				std::swap(m_field[m_line_0][m_column_0], m_field[m_line_0][m_column_0 - 1]);
-				--m_column_0;
+				std::swap(field[empty_line][empty_column], field[empty_line][empty_column - 1]);
+				--empty_column;
 			}
 			else throw std::runtime_error("Выход за границы поля\n");
 			break;
 		case 'r':
-			if (m_column_0 + 1 != 4)
+			if (empty_column + 1 != 4)
 			{
-				std::swap(m_field[m_line_0][m_column_0], m_field[m_line_0][m_column_0 + 1]);
-				++m_column_0;
+				std::swap(field[empty_line][empty_column], field[empty_line][empty_column + 1]);
+				++empty_column;
 			}
 			else throw std::runtime_error("Выход за границы поля\n");
 			break;
@@ -105,38 +87,27 @@ void barley_break::transposition(char place)
 			throw - 1;
 			break;
 		}
-	}
-	catch (std::exception& exception)
-	{
-		std::cerr<< exception.what() << '\n';
-	}
-	catch (...)
-	{
-		std::cerr << "Ненормальное поведение\n";
-		system("PAUSE");
-		exit(-1);
-	}
 }
-bool barley_break::check()
+bool Barley_break::check()
 {
-	int zn = 1;
+	int value = 1;//zn в value
 	for (int i = 0; i < 4; ++i)
 		for (int j = 0; j < 4; ++j)
 		{
-			if (m_field[i][j] != zn)
-				if (m_field[i][j] != 0) return false;
+			if (field[i][j] != value)
+				if (field[i][j] != 0) return false;
 				else continue;
-			++zn;
+			++value;
 		}
 	return true;
 }
-void barley_break::display()
+void Barley_break::display()
 {
 	for (int i = 0; i < 4; ++i)
 	{
 		for (int j = 0; j < 4; ++j)
 		{
-			std::cout << m_field[i][j] << " ";
+			std::cout << field[i][j] << " ";
 		}
 		std::cout << std::endl;
 	}

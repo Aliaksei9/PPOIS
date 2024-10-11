@@ -1,0 +1,21 @@
+[2024-10-08 17:46:11] [info] Start Program:
+Path:"C:\\2kurs\\PPOIS\\lab1\\x64\\Debug\\Unit-test1.exe"
+Arguments:
+Working directory: "C:\\2kurs\\PPOIS\\lab1\\Unit-test1\\"
+Modules: Selected: C:\2kurs\PPOIS\lab1\x64\Debug\lab1.exe C:\2kurs\PPOIS\lab1\x64\Debug\Unit-test1.exe Excluded: 
+Sources: Selected: C:\2kurs\PPOIS\lab1\lab1 C:\2kurs\PPOIS\lab1\Unit-test1 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\Aliak\AppData\Local\Temp\4gu0tbpf.j2e 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+[2024-10-08 17:46:12] [info] Module: C:\2kurs\PPOIS\lab1\x64\Debug\Unit-test1.exe is selected because it matches selected pattern: C:\2kurs\PPOIS\lab1\x64\Debug\Unit-test1.exe
+[2024-10-08 17:46:12] [info] ----------------------------------------------------
+[2024-10-08 17:46:12] [info] Coverage binary generated in file: C:\Users\Aliak\AppData\Local\Temp\4gu0tbpf.j2e
+[2024-10-08 17:46:12] [info] ----------------------------------------------------
+[2024-10-08 17:46:12] [info] The code coverage report is not what you expect? See the FAQ https://github.com/OpenCppCoverage/OpenCppCoverage/wiki/FAQ.
