@@ -40,46 +40,46 @@ void Barley_break::mix()
 		for (int j = 0; j < 4; ++j)
 			if (field[i][j] == 0)
 			{
-				empty_line = i;
-				empty_column = j;
+				empty_line_index = i;
+				empty_column_index = j;
 			}
-	std::swap(field[empty_line][empty_column], field[3][3]);
-	empty_column = 3;
-	empty_line = 3;
+	std::swap(field[empty_line_index][empty_column_index], field[3][3]);
+	empty_column_index = 3;
+	empty_line_index = 3;
 }
 void Barley_break::transposition(char place)//пробрасыать throw дальше
 {
 		switch (place)
 		{
 		case 'u':
-			if (empty_line - 1 != -1)
+			if (empty_line_index - 1 != -1)
 			{
-				std::swap(field[empty_line][empty_column], field[empty_line - 1][empty_column]);
-				--empty_line;
+				std::swap(field[empty_line_index][empty_column_index], field[empty_line_index - 1][empty_column_index]);
+				--empty_line_index;
 			}
 			else throw std::runtime_error("Выход за границы поля\n");
 			break;
 		case 'd':
-			if (empty_line + 1 != 4)
+			if (empty_line_index + 1 != 4)
 			{
-				std::swap(field[empty_line][empty_column], field[empty_line + 1][empty_column]);
-				++empty_line;
+				std::swap(field[empty_line_index][empty_column_index], field[empty_line_index + 1][empty_column_index]);
+				++empty_line_index;
 			}
 			else throw std::runtime_error("Выход за границы поля\n");
 			break;
 		case 'l':
-			if (empty_column - 1 != -1)
+			if (empty_column_index - 1 != -1)
 			{
-				std::swap(field[empty_line][empty_column], field[empty_line][empty_column - 1]);
-				--empty_column;
+				std::swap(field[empty_line_index][empty_column_index], field[empty_line_index][empty_column_index - 1]);
+				--empty_column_index;
 			}
 			else throw std::runtime_error("Выход за границы поля\n");
 			break;
 		case 'r':
-			if (empty_column + 1 != 4)
+			if (empty_column_index + 1 != 4)
 			{
-				std::swap(field[empty_line][empty_column], field[empty_line][empty_column + 1]);
-				++empty_column;
+				std::swap(field[empty_line_index][empty_column_index], field[empty_line_index][empty_column_index + 1]);
+				++empty_column_index;
 			}
 			else throw std::runtime_error("Выход за границы поля\n");
 			break;

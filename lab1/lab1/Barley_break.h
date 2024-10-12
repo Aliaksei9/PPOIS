@@ -2,7 +2,7 @@
 class Barley_break
 {
 private:
-	int field[4][4], empty_line, empty_column;
+	int field[4][4], empty_line_index, empty_column_index;
 	void square_filling(int line, int column, int value);
 public:
 	Barley_break();

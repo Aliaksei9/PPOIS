@@ -7,3 +7,6 @@ packages
 lab1/.vs
 *.sln
 *.vcxproj*
+*.opencppcov
+*.log
+
