@@ -1,0 +1,1 @@
+Fish limit:5;Fish Type:1;Salinity:1;Acidity:1;Temperature:1;dissolved_oxygen:1;

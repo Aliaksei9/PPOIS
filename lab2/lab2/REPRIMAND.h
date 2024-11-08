@@ -1,0 +1,9 @@
+#pragma once
+enum REPRIMAND
+{
+	ABSENCE,//Отсутствие
+	SPREE,//Пьянка
+	LATE,
+	LEFT_WORK_EARLY,
+	FAILURE_TO_COMPLY_WITH_SAFETY_REGULATIONS
+};

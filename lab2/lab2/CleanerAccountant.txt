@@ -1,0 +1,2 @@
+Name:Dmitry Vyacheslavovich Koromyslov;Reprimands:SPREE,LATE;ID:348123;Position:Cleaner;
+Name:Nikolai Vasilievich Dubrov;Reprimands:-;ID:541441;Position:Accountant;

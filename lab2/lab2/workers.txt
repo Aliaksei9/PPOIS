@@ -1,0 +1,8 @@
+Name:Alexey Mikhailovich Dubenko;Reprimands:-;ID:231232;Position:Head;
+Name:Sergey Valentinovich Dubrovsky;Reprimands:-;ID:231213;Position:HR;
+Name:Dmitry Vyacheslavovich Koromyslov;Reprimands:SPREE,LATE;ID:348123;Position:Cleaner;
+Name:Andrey Petrovich Bogateev;Reprimands:-;ID: 645521;Position:Hydrochemist;
+Name:Vyacheslav Nikitievich Advisers;Reprimands:-;ID:947082;Position:Aquarist;
+Name:Pyotr Viktorovich Nalivaiko;Reprimands:-;ID:599999;Position:Ichthyopathologist;
+Name:Nikolai Vasilievich Dubrov;Reprimands:-;ID:541873;Position:PurchasingManager;
+Name:Nikolai Vasilievich Dubrov;Reprimands:-;ID:541441;Position:Accountant;
