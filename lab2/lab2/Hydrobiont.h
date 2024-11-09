@@ -20,7 +20,7 @@ protected:
 	FISH_TYPE fish_type;
 	bool sex;
 public:
-	Hydrobiont(Water& water, int hp,int fish_max_HP, int fish_damage, FISH_TYPE type, bool fish_sex) :
+	Hydrobiont(Water water, int hp,int fish_max_HP, int fish_damage, FISH_TYPE type, bool fish_sex) :
 		required_water(water), HP(hp), max_HP(fish_max_HP), damage(fish_damage), fish_type(type), sex(fish_sex)
 	{
 		if (HP > max_HP) throw std::runtime_error("Ќеправильно задан измен€емый параметр");

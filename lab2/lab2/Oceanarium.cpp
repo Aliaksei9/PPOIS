@@ -5,20 +5,22 @@ void Oceanarium::AquaristDistribution(int worker_index)
 {
 	int selected_action;
 	std::cout << "Выберите желаемое действие:\n 1.Покормить рыбок.\n 2.Почистить аквариум.\n3.Отдохнуть\n";
-	while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 3)
+	std::cin >> selected_action;
+	/*while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 3)
 	{
 		std::cout << "Выберите желаемое действие:\n 1.Покормить рыбок.\n 2.Почистить аквариум.\n3.Отдохнуть\n";
 		buffer_clean();
-	}
+	}*/
 	if (selected_action != 3)
 	{
 		std::cout << "Выберите 1 аквариум(индекс начинается с 0) из " << aquariums.size();
 		int aquarium_index;
-		while (!(std::cin >> aquarium_index) || std::cin.peek() != '\n' || aquarium_index < 0 || aquarium_index >= aquariums.size())
+		std::cin >> aquarium_index;
+		/*while (!(std::cin >> aquarium_index) || std::cin.peek() != '\n' || aquarium_index < 0 || aquarium_index >= aquariums.size())
 		{
 			std::cout << "Выберите 1 аквариум из " << aquariums.size();
 			buffer_clean();
-		}
+		}*/
 		switch (selected_action)
 		{
 		case 1:
@@ -35,22 +37,24 @@ void Oceanarium::HRDistribution(int worker_index)
 {
 	int selected_action;
 	std::cout << "Выберите желаемое действие:\n 1.Нанять нового рабочего.\n 2.Уволить старого рабочего.\n3.Отдохнуть\n";
-	while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 3)
+	std::cin >> selected_action;
+	/*while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 3)
 	{
 		std::cout << "Выберите желаемое действие:\n 1.Нанять нового рабочего.\n 2.Уволить старого рабочего.\n3.Отдохнуть\n";
 		buffer_clean();
-	}
+	}*/
 	switch (selected_action)
 	{
 	case 1:
 		int pos_number;
 		PROFFESIONS position;
 		std::cout << "Выберите желаемую позицию\n1.HR\n2.Уборщик\n3.Гидрохимик\n4.Аквариомист\n5.Ихтеопатолог\n6.Менеджер по закупкам\n7.Бухгалетер\n";
-		while (!(std::cin >> pos_number) || std::cin.peek() != '\n' || pos_number < 1 || pos_number > 7)
+		std::cin >> pos_number;
+		/*while (!(std::cin >> pos_number) || std::cin.peek() != '\n' || pos_number < 1 || pos_number > 7)
 		{
 			std::cout << "Выберите желаемую позицию\n1.HR\n2.Уборщик\n3.Гидрохимик\n4.Аквариомист\n5.Ихтеопатолог\n6.Менеджер по закупкам\n7.Бухгалетер\n";
 			buffer_clean();
-		}
+		}*/
 		switch (pos_number)
 		{
 		case 1:
@@ -80,11 +84,12 @@ void Oceanarium::HRDistribution(int worker_index)
 	case 2:
 		int ID;
 		std::cout << "ID увольняемого рабочего\n";
-		while (!(std::cin >> ID) || std::cin.peek() != '\n')
+		std::cin >> ID;
+		/*while (!(std::cin >> ID) || std::cin.peek() != '\n')
 		{
 			std::cout << "ID увольняемого рабочего\n";
 			buffer_clean();
-		}
+		}*/
 		dynamic_cast<HR*>(workers[worker_index])->fire_an_employee(workers, ID);
 		break;
 	case 3:
@@ -96,20 +101,22 @@ void Oceanarium::HydrochemistDistribution(int worker_index)
 {
 	int selected_action;
 	std::cout << "Выберите желаемую позицию\n1.Взять пробы\n2.Изменить воду\n3.Отдохнуть\n";
-	while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 3)
+	std::cin >> selected_action;
+	/*while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 3)
 	{
 		std::cout << "Выберите желаемую позицию\n1.Взять пробы\n2.Изменить воду\n3.Отдохнуть\n";
 		buffer_clean();
-	}
+	}*/
 	if (selected_action != 3)
 	{
 		std::cout << "Выберите 1 аквариум из " << aquariums.size();
 		int aquarium_index;
-		while (!(std::cin >> aquarium_index) || std::cin.peek() != '\n' || aquarium_index < 0 || aquarium_index >= aquariums.size())
+		std::cin >> aquarium_index;
+		/*while (!(std::cin >> aquarium_index) || std::cin.peek() != '\n' || aquarium_index < 0 || aquarium_index >= aquariums.size())
 		{
 			std::cout << "Выберите 1 аквариум из " << aquariums.size();
 			buffer_clean();
-		}
+		}*/
 		switch (selected_action)
 		{
 		case 1:
@@ -119,17 +126,19 @@ void Oceanarium::HydrochemistDistribution(int worker_index)
 			char selected_option;
 			double new_value;
 			std::cout << "Выберите изменяемый параметр\n1.'s'-солёность\n2.'a'-кислотность\n3.'t'-температура\n4.'d'-растворённый кислород\n";
-			while (!(std::cin >> selected_option) || std::cin.peek() != '\n' || (selected_option != 's' && selected_option != 'a' && selected_option != 't' && selected_option != 'd'))
+			std::cin >> selected_option;
+			/*while (!(std::cin >> selected_option) || std::cin.peek() != '\n' || (selected_option != 's' && selected_option != 'a' && selected_option != 't' && selected_option != 'd'))
 			{
 				std::cout << "Выберите изменяемый параметр\n1.'s'-солёность\n2.'a'-кислотность\n3.'t'-температура\n4.'d'-растворённый кислород\n";
 				buffer_clean();
-			}
+			}*/
 			std::cout << "Выберите новое значение параметра\n";
-			while (!(std::cin >> new_value) || std::cin.peek() != '\n')
+			std::cin >> new_value;
+			/*while (!(std::cin >> new_value) || std::cin.peek() != '\n')
 			{
 				std::cout << "Выберите новое значение параметра\n";
 				buffer_clean();
-			}
+			}*/
 			dynamic_cast<Hydrochemist*>(workers[worker_index])->change_water_parameters(*aquariums[aquarium_index], selected_option, new_value);
 			break;
 		}
@@ -140,40 +149,44 @@ void Oceanarium::IchthyopathologistDistribution(int worker_index)
 {
 	int selected_action;
 	std::cout << "Выберите желаемое действие\n1.Вылечить рыбу\n2.Разведение рыб\n3.Отдохнуть\n";
-	while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 3)
+	std::cin >> selected_action;
+	/*while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 3)
 	{
 		std::cout << "Выберите желаемое действие\n1.Вылечить рыбу\n2.Разведение рыб\n3.Отдохнуть\n";
 		buffer_clean();
-	}
+	}*/
 	if (selected_action != 3)
 	{
 		std::cout << "Выберите 1 аквариум из " << aquariums.size();
 		int aquarium_index;
-		while (!(std::cin >> aquarium_index) || std::cin.peek() != '\n' || aquarium_index < 0 || aquarium_index >= aquariums.size())
+		std::cin >> aquarium_index;
+		/*while (!(std::cin >> aquarium_index) || std::cin.peek() != '\n' || aquarium_index < 0 || aquarium_index >= aquariums.size())
 		{
 			std::cout << "Выберите 1 аквариум из " << aquariums.size();
 			buffer_clean();
-		}
+		}*/
 		std::vector < Hydrobiont > fishes = aquariums[aquarium_index]->get_fishes();
 		if (fishes.size() < 1) return;
 		std::cout << "Выберите 1 рыбу из списка из" << fishes.size() << "рыб\n";
 		int fish_index;
-		while (!(std::cin >> fish_index) || std::cin.peek() != '\n' || fish_index < 0 || fish_index >= fishes.size())
+		std::cin >> fish_index;
+		/*while (!(std::cin >> fish_index) || std::cin.peek() != '\n' || fish_index < 0 || fish_index >= fishes.size())
 		{
 			std::cout << "Выберите 1 рыбу из списка из" << fishes.size() << "рыб\n";
 			buffer_clean();
-		}
+		}*/
 		Hydrobiont& fish = fishes[fish_index];
 		if (selected_action == 1) dynamic_cast<Ichthyopathologist*>(workers[worker_index])->healing(fish);
 		else
 		{
 			int fish_index2;
 			std::cout << "Выберите вторую рыбу из списка из" << fishes.size() << "рыб\n";
-			while (!(std::cin >> fish_index2) || std::cin.peek() != '\n' || fish_index2 < 0 || fish_index2 >= fishes.size() || fish_index == fish_index2)
+			std::cin >> fish_index2;
+			/*while (!(std::cin >> fish_index2) || std::cin.peek() != '\n' || fish_index2 < 0 || fish_index2 >= fishes.size() || fish_index == fish_index2)
 			{
 				std::cout << "Выберите вторую рыбу из списка из" << fishes.size() << "рыб\n";
 				buffer_clean();
-			}
+			}*/
 			if (fishes.size() < 2) return;
 			Hydrobiont& fish1 = fishes[fish_index];
 			Hydrobiont& fish2 = fishes[fish_index2];
@@ -187,11 +200,12 @@ void Oceanarium::PurchasingManagerDistribution(int worker_index)
 {
 	int selected_action;
 	std::cout << "Выберите желаемое действие\n1.Купить аквариум\n2.Продать аквариум\n3.Купить рыбу\n4.Отдохнуть\n";
-	while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 4)
+	std::cin >> selected_action;
+	/*while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 4)
 	{
 		std::cout << "Выберите желаемое действие\n1.Купить аквариум\n2.Продать аквариум\n3.Купить рыбу\n4.Отдохнуть\n";
 		buffer_clean();
-	}
+	}*/
 	if (selected_action != 4)
 	{
 		switch (selected_action)
@@ -199,29 +213,31 @@ void Oceanarium::PurchasingManagerDistribution(int worker_index)
 		case 1:
 			std::cout << "Введите лимит рыб\n";
 			int fish_limit, aquarium_type;
-			while (!(std::cin >> fish_limit) || std::cin.peek() != '\n' || fish_limit < 0)
+			std::cin >> fish_limit;
+			/*while (!(std::cin >> fish_limit) || std::cin.peek() != '\n' || fish_limit < 0)
 			{
 				std::cout << "Введите лимит рыб\n";
 				buffer_clean();
-			}
-
+			}*/
 			std::cout << "Введите тип аквариума\n1.Аквариум для хищников\n2.Аквариум для травоядных\n";
-			while (!(std::cin >> aquarium_type) || std::cin.peek() != '\n' || aquarium_type < 0 || aquarium_type>2)
+			std::cin >> aquarium_type;
+			/*while (!(std::cin >> aquarium_type) || std::cin.peek() != '\n' || aquarium_type < 0 || aquarium_type>2)
 			{
 				std::cout << "Введите тип аквариума\n1.Аквариум для хищников\n2.Аквариум для травоядных\n";
 				buffer_clean();
-			}
+			}*/
 			if (aquarium_type == 1) dynamic_cast<Purchasing_manager*>(workers[worker_index])->buy_aquarium(aquariums, fish_limit, PREDATOR);
 			else dynamic_cast<Purchasing_manager*>(workers[worker_index])->buy_aquarium(aquariums, fish_limit, HERBIVORE);
 			break;
 		case 2:
 			std::cout << "Выберите 1 аквариум из " << aquariums.size();
 			int aquarium_index;
-			while (!(std::cin >> aquarium_index) || std::cin.peek() != '\n' || aquarium_index < 0 || aquarium_index >= aquariums.size())
+			std::cin >> aquarium_index;
+			/*while (!(std::cin >> aquarium_index) || std::cin.peek() != '\n' || aquarium_index < 0 || aquarium_index >= aquariums.size())
 			{
 				std::cout << "Выберите 1 аквариум из " << aquariums.size();
 				buffer_clean();
-			}
+			}*/
 			dynamic_cast<Purchasing_manager*>(workers[worker_index])->sell_aquarium(aquariums, aquarium_index);
 			break;
 		case 3:
@@ -231,60 +247,68 @@ void Oceanarium::PurchasingManagerDistribution(int worker_index)
 			int max_HP, damage, aq_index;
 			bool sex, fish_type;
 			std::cout << "Выберите 1 аквариум из " << aquariums.size();
-			while (!(std::cin >> aq_index) || std::cin.peek() != '\n' || aq_index < 0 || aq_index >= aquariums.size())
+			std::cin >> aq_index;
+			/*while (!(std::cin >> aq_index) || std::cin.peek() != '\n' || aq_index < 0 || aq_index >= aquariums.size())
 			{
 				std::cout << "Выберите 1 аквариум из " << aquariums.size();
 				buffer_clean();
-			}
+			}*/
 			std::cout << "Введите параметры воды\n1.Введите солёность\n";
-			while (!(std::cin >> salinity) || std::cin.peek() != '\n' || salinity < 0)
+			std::cin >> salinity;
+			/*while (!(std::cin >> salinity) || std::cin.peek() != '\n' || salinity < 0)
 			{
 				std::cout << "Введите солёность\n";
 				buffer_clean();
-			}
+			}*/
 			std::cout << "2.Введите кислотность\n";
-			while (!(std::cin >> acidity) || std::cin.peek() != '\n' || acidity < 0)
+			std::cin >> acidity;
+			/*while (!(std::cin >> acidity) || std::cin.peek() != '\n' || acidity < 0)
 			{
 				std::cout << "Введите кислотность\n";
 				buffer_clean();
-			}
+			}*/
 			std::cout << "3.Введите температуру\n";
-			while (!(std::cin >> temperature) || std::cin.peek() != '\n' || temperature < 0)
+			std::cin >> temperature;
+			/*while (!(std::cin >> temperature) || std::cin.peek() != '\n' || temperature < 0)
 			{
 				std::cout << "Введите температуру\n";
 				buffer_clean();
-			}
+			}*/
 			std::cout << "4.Введите растворённый кислород\n";
-			while (!(std::cin >> dissolved_oxygen) || std::cin.peek() != '\n' || dissolved_oxygen < 0)
+			std::cin >> dissolved_oxygen;
+			/*while (!(std::cin >> dissolved_oxygen) || std::cin.peek() != '\n' || dissolved_oxygen < 0)
 			{
 				std::cout << "Введите растворённый кислород\n";
 				buffer_clean();
-			}
+			}*/
 			std::cout << "Введите параметры рыбы\n.1.Максимальное HP\n";
-			while (!(std::cin >> max_HP) || std::cin.peek() != '\n' || max_HP <= 0)
+			std::cin >> max_HP;
+			/*while (!(std::cin >> max_HP) || std::cin.peek() != '\n' || max_HP <= 0)
 			{
 				std::cout << "Введите максимальное HP\n";
 				buffer_clean();
-			}
+			}*/
 			std::cout << "2.Урон\n";
-			while (!(std::cin >> damage) || std::cin.peek() != '\n' || damage < 0)
+			std::cin >> damage;
+			/*while (!(std::cin >> damage) || std::cin.peek() != '\n' || damage < 0)
 			{
 				std::cout << "Введите урон рыбы\n";
 				buffer_clean();
-			}
-
+			}*/
 			std::cout << "3.Пол(1-мужской,0-женский)\n";
-			while (!(std::cin >> sex) || std::cin.peek() != '\n')
+			std::cin >> sex;
+			/*while (!(std::cin >> sex) || std::cin.peek() != '\n')
 			{
 				std::cout << "Введите пол рыбы\n";
 				buffer_clean();
-			}
+			}*/
 			std::cout << "4.Тип питания(1-хищник,0-травоядное)\n";
-			while (!(std::cin >> fish_type) || std::cin.peek() != '\n')
+			std::cin >> fish_type;
+			/*while (!(std::cin >> fish_type) || std::cin.peek() != '\n')
 			{
 				std::cout << "Введите тип питания\n";
 				buffer_clean();
-			}
+			}*/
 			if (fish_type == 1)dynamic_cast<Purchasing_manager*>(workers[worker_index])->buy_fish(aquariums[aq_index], Water(salinity, acidity, temperature, dissolved_oxygen), max_HP, damage, PREDATOR, sex);
 			else dynamic_cast<Purchasing_manager*>(workers[worker_index])->buy_fish(aquariums[aq_index], Water(salinity, acidity, temperature, dissolved_oxygen), max_HP, damage, PREDATOR, sex);
 			break;
@@ -296,26 +320,29 @@ void Oceanarium::HeadDistribution(int worker_index)
 {
 	int selected_action;
 	std::cout << "Выберите желаемое действие:\n 1.Выписать выговор.\n 2.Отдохнуть\n";
-				while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 2)
+	std::cin >> selected_action;
+				/*while (!(std::cin >> selected_action) || std::cin.peek() != '\n' || selected_action < 1 || selected_action > 2)
 				{
 					std::cout << "Выберите желаемое действие:\n 1.Выписать выговор.\n 2.Отдохнуть\n";
 					buffer_clean();
-				}
+				}*/
 				if (selected_action == 1)
 				{
 					int ID, reprimand;
 					std::cout << "ID рабочего,которому выписывается выговор\n";
-					while (!(std::cin >> ID) || std::cin.peek() != '\n')
+					std::cin >> ID;
+					/*while (!(std::cin >> ID) || std::cin.peek() != '\n')
 					{
 						std::cout << "ID рабочего,которому выписывается выговор\n";
 						buffer_clean();
-					}
+					}*/
 					std::cout << "Выберите причину выговора\n1.Отсутствие\n2.Пьянство\n3.Опоздание\n4.Преждевременное покидание рабочего места\n5.Не соблюдение техники безопасности\n";
-					while (!(std::cin >> reprimand) || std::cin.peek() != '\n' || reprimand < 1 || reprimand>5)
+					std::cin >> reprimand;
+					/*while (!(std::cin >> reprimand) || std::cin.peek() != '\n' || reprimand < 1 || reprimand>5)
 					{
 						std::cout << "Выберите причину выговора\n";
 						buffer_clean();
-					}
+					}*/
 					switch (reprimand)
 					{
 					case 1:
@@ -375,7 +402,8 @@ void Oceanarium::initial_inspection_of_aquariums()
 			<< "\nВИД:";
 		if (aquariums[i]->get_fishes()[j].get_type() == PREDATOR) std::cout << "Хищник";
 		else std::cout << "Травоядное";
-		std::cout << "\n------------------------------------";}
+		//std::cout << "\n------------------------------------";
+		}
 	}
 }
 void Oceanarium::worker_information()

@@ -34,9 +34,6 @@ void Aquarium::new_day_aquarium()
 					fishes.erase(fishes.begin() + a);
 					profitability = profitability-400;
 					break;
-				default:
-					throw - 1;
-					break;
 				}
 			}
 			else

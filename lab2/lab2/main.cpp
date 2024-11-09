@@ -13,11 +13,18 @@ int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	Accounting organisation;
 	srand(static_cast<unsigned int>(time(0)));
 	char exitchar = 'r';
 	Accounting organization;
 	Oceanarium oceanarium(organization);
+	Accounting organisation;
+	Aquarium aquarium(5, Water(1, 1, 1, 1), organisation, PREDATOR);
+	aquarium.add_fish(Hydrobiont(Water(1, 2, 1, 1), 5, 20, 3, PREDATOR, 1));
+	aquarium.add_fish(Hydrobiont(Water(1, 1, 1, 1), 5, 20, 3, PREDATOR, 1));
+	aquarium.add_fish(Hydrobiont(Water(1, 1, 1, 1), 18, 20, 3, PREDATOR, 1));
+	aquarium.new_day_aquarium();
+	aquarium.new_day_aquarium();
+	aquarium.new_day_aquarium();
 	while (exitchar != 'e')
 	{
 		try

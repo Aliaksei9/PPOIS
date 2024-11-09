@@ -7,11 +7,11 @@ private:
 	std::vector<Worker*> workers;
 	std::vector<Aquarium*> aquariums;
 	Accounting *organization;
-	void buffer_clean()
+	/*void buffer_clean()
 	{
 		std::cin.clear();
 		std::cin.ignore();
-	}
+	}*/
 	void AccountnantDistribution(int worker_index);
 	void AquaristDistribution(int worker_index);
 	void HRDistribution(int worker_index);
