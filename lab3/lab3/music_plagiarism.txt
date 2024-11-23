@@ -1,0 +1,5 @@
+quality:2;mood:cheerful;
+quality:2;mood:ridiculous;
+quality:2;mood:sad_anguish;
+quality:2;mood:very_melancholic;
+quality:2;mood:neutral;

@@ -1,0 +1,6 @@
+Proffesion:Scriptwriter;name:Alexey Horov;professionalism:2;specialization:CHEERFUL;
+Proffesion:Musician;name:Roman Simonov;professionalism:2;specialization:VERY_MELANCHOLIC;
+Proffesion:Programmer;name:Dmitriy Saharov;professionalism:2;
+Proffesion:3D Artist;name:Zahar Volkov;professionalism:2;
+Proffesion:Level_designer;name:Alexey Kovalev;professionalism:2;
+Proffesion:Accountant1;name:Nikita Kovalev;professionalism:2;
