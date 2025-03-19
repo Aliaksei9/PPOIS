@@ -1,0 +1,119 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' --- Пакет save_unload ---
+namespace save_unload {
+    class SaveUnload {
+        + save_object(file_name: str, save_object: any)
+        + unload_object(file_name:str)
+    }
+}
+
+' --- Пакет system_object ---
+namespace system_object {
+    class SystemObject {
+        + show(self)
+        + folder_search(self,folder_name:str)
+        + file_search(self,file_name:str)
+    }
+}
+
+' --- Пакет disk ---
+namespace disk {
+    class Disk {
+        - files: list<File>
+        - folders: list<Folder>
+        - name: str
+        - memmory: int
+        --
+        + add(self, add_object)
+        + delete(self, object_name)
+        + show(self)
+    }
+}
+
+' --- Пакет file ---
+namespace file {
+    class File {
+        - states
+        - machine
+        - name: str
+        - text: str
+        - quality: int
+        - timing: int
+        - _memmory_consumption
+        --
+        + after_jpg_change(self)
+        + after_txt_change(self)
+        + after_mp4_change(self)
+        + watch_video(self)
+        + read_txt(self)
+        + view_picture(self)
+    }
+}
+
+' --- Пакет folder ---
+namespace folder {
+    class Folder {
+        - name: str
+        - machine
+        - folders: list<Folder>
+        - files: list<File>
+        - _memmory_consumption: int
+        - states
+        --
+        + delete(self,object_name)
+        + archiving(self)
+        + unzipping(self)
+        + add(self, add_object)
+        + show(self)
+    }
+}
+
+' --- Пакет system ---
+namespace system {
+    class System {
+        - password: int
+        - disks: list<Disk>
+        --
+        + searh_disk(self, disk_name: str)
+        + add_disk(self, name:str, memmory: int)
+    }
+}
+
+' --- Пакет user ---
+namespace user {
+    class User {
+        - system: System
+        - machine
+        - states
+        --
+        + sudo_password(self)
+        + unzipping(self)
+        - disk_identifying(self, path="")
+        - path_parser(self, path:str)
+        + show(self, path="")
+        + create_object(self, path="")
+        + delete_object(self, path="")
+        + moving(self, path1="", path2="")
+        + copying(self, path1="", path2="")
+        + archiving(self, path="")
+        + unzipping(self, path="")
+    }
+}
+
+' ====== Наследование ======
+system_object.SystemObject <|-- disk.Disk
+system_object.SystemObject <|-- folder.Folder
+
+' ====== Агрегация ======
+folder.Folder o-- file.File
+disk.Disk o-- file.File
+disk.Disk o-- folder.Folder
+folder.Folder o-- folder.Folder
+user.User o-- system.System
+
+' ====== Композиция ======
+system.System *-- disk.Disk
+
+@enduml
